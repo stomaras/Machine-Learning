@@ -1,6 +1,5 @@
 # Simple Linear Regression
 
-
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
@@ -22,6 +21,7 @@ X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 sc_y = StandardScaler()
 y_train = sc_y.fit_transform(y_train)"""
+
 #These lines of codes fit your regressors object which is an object of the linear Regression class to train
 #set X_train and y_train, this will not only create our simple linear regressor but also it will fit this regressor to our training data that means that 
 #executing this code section here our model will already learn the correlations of our training set to learn how it can predict the dependent variable which is 
@@ -37,5 +37,23 @@ regressor.fit(X_train, y_train)
 
 # Predicting the Test set results 
 
+
 # This vector will contain the predicted salaries for all the observations of our test sets
 y_pred = regressor.predict(X_test)
+
+# Visualizing the Training set results
+plt.scatter(X_train, y_train, color = 'red')
+plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience (Training set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+
+
+# Visualizing the Test set results
+plt.scatter(X_test, y_test, color = 'red')
+plt.plot(X_train, regressor.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience (Test set)')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
