@@ -28,3 +28,8 @@ Country_dummies = pd.get_dummies(dataset, columns=['Country'])
 Purchased_dummies = pd.get_dummies(dataset, columns=['Purchased'])
 print(Country_dummies)
 print(Purchased_dummies)
+
+# Splitting the dataset into the training set and Test set
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
