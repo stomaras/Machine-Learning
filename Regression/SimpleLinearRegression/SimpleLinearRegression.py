@@ -34,3 +34,8 @@ y_train = sc_y.fit_transform(y_train)"""
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
+
+# Predicting the Test set results 
+
+# This vector will contain the predicted salaries for all the observations of our test sets
+y_pred = regressor.predict(X_test)
