@@ -3,9 +3,9 @@ Topics to be covered:
     1. How to create a Dataframe
     2. How to Describe a DataFrame
     3. How to Navigate the Dataframe
-    4.
-    5.
-    6.
+    4. How to select the rows of a pandas Dataframe based on conditions
+    5. How to replace a value
+    6. How to rename a column 
 """
 import pandas as pd 
 import numpy as np 
@@ -69,3 +69,14 @@ trains[trains['Pclass'] == 3].head(2)
 # Get the data based on conditions on more than 1 columns
 
 trains[(trains['Sex'] == 'male') & (trains['Age'] > 40)]
+
+# How to replace a value?
+
+trains['Sex'].replace("male", 'Men')
+
+trains['col1'] = trains['Sex'].replace("male",'Men')
+
+
+# How to rename a column 
+
+trains = trains.rename(columns={'col1':'col2'})
